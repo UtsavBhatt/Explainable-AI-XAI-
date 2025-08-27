@@ -22,11 +22,11 @@ def load_artifacts():
     """
     try:
         models = {
-            'XGBoost': pickle.load(open('xgboost_model.pkl', 'rb')),
-            'LightGBM': pickle.load(open('lightgbm_model.pkl', 'rb'))
+        'XGBoost': pickle.load(open('Credit Risk/xgboost_model.pkl', 'rb')),
+        'LightGBM': pickle.load(open('Credit Risk/lightgbm_model.pkl', 'rb'))
         }
-        encoder_cols = pickle.load(open('encoder.pkl', 'rb'))
-        X_train = pickle.load(open('X_train.pkl', 'rb'))
+        encoder_cols = pickle.load(open('Credit Risk/encoder.pkl', 'rb'))
+        X_train = pickle.load(open('Credit Risk/X_train.pkl', 'rb'))
         return models, encoder_cols, X_train
     except FileNotFoundError:
         st.error("One or more model files not found. Please run the `Models.py` script first to train and save the artifacts.")
